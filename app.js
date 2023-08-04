@@ -34,11 +34,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/products', products);
+// app.use('/', indexRouter);
+// app.use('/products', products);
 
-app.use('/user', usersRouter);
-app.use('/todo',todoRouter);
+app.use(usersRouter);
+app.use(todoRouter);
 
 
 

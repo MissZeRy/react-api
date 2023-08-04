@@ -12,19 +12,6 @@ router.get('/', (req, res, next) => {
 })
 
 
-
-// router.get('/todos/:user', async (req, res) => {
-//     const { user } = req.params;
-//     try {
-//         const todos = await Todo.find({ user: user }).sort({ _id: -1 });
-//         res.json(todos);
-//         res.send('Api is runing...')
-//     } catch (error) {
-//         res.status(500).json();
-//     }
-// });
-
-
 router.get('/todos/:user', TodoController.getAllTodos);
 router.post('/todos/create', TodoController.AddTodo);
 router.delete('/todos/delete/:id', TodoController.DeletedTodo);
